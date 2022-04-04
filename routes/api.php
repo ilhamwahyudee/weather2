@@ -18,11 +18,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/current',[\App\Http\Controllers\Wrapper::class, 'districts'])->name('districts');
-Route::get('/current',[\App\Http\Controllers\Wrapper::class, 'current'])->name('current');
-Route::get('/current',[\App\Http\Controllers\Wrapper::class, 'current2'])->name('current2');
-Route::get('/current',[\App\Http\Controllers\Wrapper::class, 'current3'])->name('current3');
-Route::get('/current',[\App\Http\Controllers\Wrapper::class, 'current4'])->name('current4');
+Route::get('/current',[\App\Http\Controllers\Wrapper::class, 'districts'])->name('districts')->middleware('npm');
+Route::get('/current',[\App\Http\Controllers\Wrapper::class, 'current'])->name('current')->middleware('npm');
+Route::get('/current',[\App\Http\Controllers\Wrapper::class, 'current2'])->name('current2')->middleware('npm');
+Route::get('/current',[\App\Http\Controllers\Wrapper::class, 'current3'])->name('current3')->middleware('npm');
+Route::get('/current',[\App\Http\Controllers\Wrapper::class, 'current4'])->name('current4')->middleware('npm');
 
 Route::get('/user/identitas', function(){
     return [
