@@ -18,7 +18,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/current?access_key=ca37374410ef2f88b56c6c32c48fb115&query=New York',[\App\Http\Controllers\Wrapper::class, 'districts'])->name('districts');
+Route::get('/current',[\App\Http\Controllers\Wrapper::class, 'districts'])->name('districts');
+Route::get('/current',[\App\Http\Controllers\Wrapper::class, 'current'])->name('current');
+Route::get('/current',[\App\Http\Controllers\Wrapper::class, 'current2'])->name('current2');
+Route::get('/current',[\App\Http\Controllers\Wrapper::class, 'current3'])->name('current3');
+Route::get('/current',[\App\Http\Controllers\Wrapper::class, 'current4'])->name('current4');
 
 Route::get('/user/identitas', function(){
     return [
